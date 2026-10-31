@@ -28,7 +28,8 @@ Feita e testada pela **RenixAI** num cofre real, com uma pessoa iniciante, guiad
 
 1. Baixe este repositório: botão verde **Code** › **Download ZIP**, ou
    ```bash
-   git clone https://github.com/<usuario>/<repositorio>.git
+   git clone https://github.com/Renso2025/segundo-cerebro-skill.git
+   cd segundo-cerebro-skill
    ```
 2. Copie a pasta `skills/montar-segundo-cerebro` para a pasta de skills do seu agente:
    ```bash
