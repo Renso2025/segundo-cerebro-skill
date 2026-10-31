@@ -1,0 +1,39 @@
+<title>Obsidian no computador</title>
+<h2 class="dv-titulo">Segundo cérebro no computador</h2>
+<p class="dv-sub">Windows. Uns 10 minutos. Faça na ordem.</p>
+
+<ol class="dv-passos">
+<li data-ico="⬇️"><b>1. Instalar o Git</b><p>Abra o link 1, baixe o <b>Git for Windows</b> (64-bit) e instale clicando <b>Next</b> em tudo, sem mudar nada. Se já tiver o Obsidian instalado, pule para o passo 2; se não, baixe também pelo link 2.</p></li>
+<li data-ico="🖥️"><b>2. Abrir o PowerShell</b><p>Clique no botão Iniciar, digite <b>PowerShell</b> e abra. Cole o comando A (seu nome e e-mail nas notas) e aperte Enter.</p></li>
+<li data-ico="📥"><b>3. Baixar as notas</b><p>Cole o comando B e aperte Enter. Vai abrir uma janela pedindo login no GitHub: escolha <b>Sign in with your browser</b> e autorize. Ele cria a pasta <b>Documentos\Segundo Cerebro</b>.</p></li>
+<li data-ico="📂"><b>4. Abrir no Obsidian</b><p>No Obsidian, na tela inicial (ou no ícone de cofre no canto de baixo › Gerenciar cofres), escolha <b>Abrir pasta como cofre</b> e selecione <b>Documentos › Segundo Cerebro</b>.</p></li>
+<li data-ico="🧩"><b>5. Liberar o plugin</b><p>Ele vai perguntar se confia nos plugins do cofre. Toque em <b>Confiar no autor e ativar plugins</b>. O Git já vem configurado do celular (10 minutos, pull ao abrir).</p></li>
+<li data-ico="✅"><b>6. Testar</b><p>Abra a nota <b>Teste da Naty</b>, escreva "oi do computador", aperte <b>Ctrl+P</b>, digite <b>sync</b> e escolha <b>Git: Commit-and-sync</b>. Me avise que eu confiro.</p></li>
+</ol>
+
+<p class="dv-rotulo">Link 1: Git para Windows</p>
+<textarea class="cx" readonly rows="1">https://git-scm.com/download/win</textarea>
+<button class="dv-botao" onclick="copiar(this)">Copiar</button>
+
+<p class="dv-rotulo">Link 2: Obsidian (se ainda não tiver)</p>
+<textarea class="cx" readonly rows="1">https://obsidian.md/download</textarea>
+<button class="dv-botao" onclick="copiar(this)">Copiar</button>
+
+<p class="dv-rotulo">Comando A: seu nome nas notas (cole no PowerShell)</p>
+<textarea class="cx" readonly rows="2">git config --global user.name "{{NOME}}"; git config --global user.email "{{EMAIL}}"</textarea>
+<button class="dv-botao" onclick="copiar(this)">Copiar</button>
+
+<p class="dv-rotulo">Comando B: baixar as notas (cole no PowerShell)</p>
+<textarea class="cx" readonly rows="3">cd "$HOME\Documents"; git clone https://github.com/{{USUARIO}}/{{REPO}}.git "Segundo Cerebro"</textarea>
+<button class="dv-botao" onclick="copiar(this)">Copiar</button>
+
+<div class="dv-cartao dv-info"><b>Sem chave nova:</b> no computador o próprio Git guarda o seu login do GitHub depois que você autoriza no navegador. Não precisa criar outra chave.</div>
+<div class="dv-cartao dv-alerta"><b>Se aparecer erro em vermelho</b> no PowerShell, tire print e me mande.</div>
+
+<style>.cx{width:100%;box-sizing:border-box;font:14px/1.4 ui-monospace,monospace;padding:8px;border-radius:8px}</style>
+<script>
+function copiar(b){const t=b.previousElementSibling;t.focus();t.select();
+  let ok=false;try{ok=document.execCommand('copy')}catch(e){}
+  if(!ok&&navigator.clipboard){navigator.clipboard.writeText(t.value).then(()=>{b.textContent='Copiado ✓'}).catch(()=>{b.textContent='Toque e segure pra copiar'});return}
+  b.textContent=ok?'Copiado ✓':'Toque e segure pra copiar';}
+</script>

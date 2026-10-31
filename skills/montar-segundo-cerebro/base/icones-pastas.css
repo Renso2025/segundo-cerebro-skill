@@ -1,0 +1,14 @@
+/* Icones nas pastas do segundo cerebro  */
+.nav-folder-title[data-path="00-Entrada"] .nav-folder-title-content::before { content: "📥 "; }
+.nav-folder-title[data-path="01-Projetos"] .nav-folder-title-content::before { content: "🚀 "; }
+.nav-folder-title[data-path="02-Areas"] .nav-folder-title-content::before { content: "🏡 "; }
+.nav-folder-title[data-path="03-Recursos"] .nav-folder-title-content::before { content: "📚 "; }
+.nav-folder-title[data-path="04-Arquivo"] .nav-folder-title-content::before { content: "🗄️ "; }
+.nav-folder-title[data-path="05-Diario"] .nav-folder-title-content::before { content: "📅 "; }
+.nav-folder-title[data-path="_anexos"] .nav-folder-title-content::before { content: "📎 "; }
+.nav-folder-title[data-path="_modelos"] .nav-folder-title-content::before { content: "🧩 "; }
+.nav-file-title[data-path="Início.md"] .nav-file-title-content::before { content: "🏠 "; }
+.nav-file-title[data-path="COMO-FUNCIONA.md"] .nav-file-title-content::before { content: "❓ "; }
+
+/* Roxo de destaque nos titulos */
+.markdown-rendered h1, .markdown-rendered h2, .cm-header-1, .cm-header-2 { color: var(--interactive-accent); }

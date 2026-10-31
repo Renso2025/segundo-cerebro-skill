@@ -1,0 +1,34 @@
+<title>Obsidian no celular</title>
+<h2 class="dv-titulo">Segundo cérebro no celular</h2>
+<p class="dv-sub">Uns 10 minutos. Faça na ordem.</p>
+
+<ol class="dv-passos">
+<li data-ico="📱"><b>1. Criar o cofre</b><p>Na tela do print, escolha <b>Neste dispositivo</b>. Dê o nome <b>Segundo Cérebro</b> e toque em Criar.</p></li>
+<li data-ico="🧩"><b>2. Instalar o plugin Git</b><p>Engrenagem ⚙️ › <b>Plugins da comunidade</b> › <b>Ativar</b> › <b>Procurar</b>. Busque <b>Git</b> (autor Vinzent). Toque em Instalar e depois em <b>Ativar</b>.</p></li>
+<li data-ico="🔑"><b>3. Criar a chave do celular no GitHub</b><p>No navegador, abra o link 1 abaixo.<br>• <b>Token name:</b> Obsidian<br>• <b>Expiration:</b> 1 ano<br>• <b>Repository access:</b> Only select › {{REPO}}<br>• <b>Permissions › Contents:</b> Read and write<br>Toque em Generate e copie a chave. Ela aparece uma vez só, e ninguém mais precisa vê-la (nem eu).</p></li>
+<li data-ico="⚙️"><b>4. Pôr a chave no plugin</b><p>Engrenagem ⚙️ › <b>Git</b> (no fim da lista), seção <b>Authentication/Commit author</b>:<br>• <b>Username:</b> {{USUARIO}}<br>• <b>Password/Personal access token:</b> cole a chave<br>• <b>Author name</b> e <b>e-mail</b>: os seus</p></li>
+<li data-ico="⬇️"><b>5. Puxar as notas</b><p>Deslize o dedo para baixo na nota (ou toque no ícone ⌘) para abrir os comandos. Digite <b>clone</b> e escolha <b>Git: Clone an existing remote repo</b>. Cole o link 2. Quando ele perguntar a pasta, escolha <b>Vault Root</b>. Na profundidade (depth), deixe em branco. No fim, feche e abra o Obsidian de novo.</p></li>
+<li data-ico="🔄"><b>6. Sincronizar sozinho</b><p>Engrenagem ⚙️ › <b>Git</b>:<br>• ligue <b>Pull on startup</b>;<br>• ponha <b>10</b> em <b>Auto commit-and-sync interval</b>.</p></li>
+</ol>
+
+<p class="dv-rotulo">Link 1: criar a chave (abra no navegador)</p>
+<textarea class="cx" readonly rows="2">https://github.com/settings/personal-access-tokens/new</textarea>
+<button class="dv-botao" onclick="copiar(this)">Copiar</button>
+
+<p class="dv-rotulo">Link 2: endereço do cofre (cole no passo 5)</p>
+<textarea class="cx" readonly rows="2">https://github.com/{{USUARIO}}/{{REPO}}.git</textarea>
+<button class="dv-botao" onclick="copiar(this)">Copiar</button>
+
+<p class="dv-rotulo">Username (passo 4)</p>
+<textarea class="cx" readonly rows="1">{{USUARIO}}</textarea>
+<button class="dv-botao" onclick="copiar(this)">Copiar</button>
+
+<div class="dv-cartao dv-alerta"><b>Regra de ouro:</b> abra o Obsidian e espere uns segundos até ele puxar as novidades antes de escrever. E nunca mande a chave do passo 3 no chat.</div>
+
+<style>.cx{width:100%;box-sizing:border-box;font:14px/1.4 ui-monospace,monospace;padding:8px;border-radius:8px}</style>
+<script>
+function copiar(b){const t=b.previousElementSibling;t.focus();t.select();
+  let ok=false;try{ok=document.execCommand('copy')}catch(e){}
+  if(!ok&&navigator.clipboard){navigator.clipboard.writeText(t.value).then(()=>{b.textContent='Copiado ✓'}).catch(()=>{b.textContent='Toque e segure pra copiar'});return}
+  b.textContent=ok?'Copiado ✓':'Toque e segure pra copiar';}
+</script>

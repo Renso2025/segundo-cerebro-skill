@@ -1,0 +1,21 @@
+<title>Trazer a personalização pro PC</title>
+<h2 class="dv-titulo">Trazer o tema pro computador</h2>
+<p class="dv-sub">O tema já está no GitHub. Só falta o PC baixar.</p>
+<ol class="dv-passos">
+<li data-ico="❌"><b>1. Feche o Obsidian</b><p>Feche todas as janelas dele (configurações também).</p></li>
+<li data-ico="🖥️"><b>2. Abra o PowerShell</b><p>Botão Iniciar, digite <b>PowerShell</b> e abra.</p></li>
+<li data-ico="📋"><b>3. Cole o comando e aperte Enter</b><p>Ele entra na pasta das notas, desfaz qualquer ajuste de aparência feito no PC e baixa o que eu mandei. Suas notas não são tocadas.</p></li>
+<li data-ico="📸"><b>4. Me mande print do PowerShell</b><p>Deve aparecer uma lista com <b>theme.css</b> e <b>icones-pastas.css</b>.</p></li>
+<li data-ico="🎨"><b>5. Abra o Obsidian</b><p>Já deve vir claro, com o tema Minimal e ícones nas pastas.</p></li>
+</ol>
+<p class="dv-rotulo">Comando (cole no PowerShell)</p>
+<textarea class="cx" readonly rows="3">cd "$HOME\Documents\Segundo Cerebro"; git checkout -- .obsidian; git pull</textarea>
+<button class="dv-botao" onclick="copiar(this)">Copiar</button>
+<div class="dv-cartao dv-alerta"><b>Apareceu texto em vermelho?</b> Não tente consertar: só me manda o print.</div>
+<style>.cx{width:100%;box-sizing:border-box;font:14px/1.4 ui-monospace,monospace;padding:8px;border-radius:8px}</style>
+<script>
+function copiar(b){const t=b.previousElementSibling;t.focus();t.select();
+  let ok=false;try{ok=document.execCommand('copy')}catch(e){}
+  if(!ok&&navigator.clipboard){navigator.clipboard.writeText(t.value).then(()=>{b.textContent='Copiado ✓'}).catch(()=>{b.textContent='Toque e segure pra copiar'});return}
+  b.textContent=ok?'Copiado ✓':'Toque e segure pra copiar';}
+</script>
